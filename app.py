@@ -13,5 +13,15 @@ def keisan():
     menseki = (hankei * hankei) * 3.14
     return render_template("circle.html", ensyu=ensyu, menseki=menseki)
 
+@app.route("/kyuyo")
+def kyuyo():
+    jikyu = request.args.get("jikyu")
+    jikyu = int(jikyu)
+    jikan = request.args.get("jikan")
+    jikan = int(jikan)
+
+    kyuryo = jikyu * jikan
+    return render_template("salary.html", salary=salary)
+
 if __name__ == "__main__":
     app.run(debug=True)
